@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
      <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto Slab">
@@ -17,11 +17,11 @@
   <body>
     <div id="globalView" style="width: 100%; height:700"> <svg id="PSE"
         class="box" height="500" width="720" style="background-color:lightgrey; width:100%; height:600px">
-        <svg id="Act" class="actinide" x="80" y="240" width="40" height="40" onclick="returnMsg(id)"><rect
+        <svg id="Act" class="actinide" x="80" y="240" width="40" height="40" onclick="returnMsg(this.id)"><rect
             width="40" height="40" fill="olive" stroke='blue' stroke-width='1' stroke-dasharray='6.444444,6.444444'></rect><text fill="#000" font-size="10"
             font-family="Roboto Slab" x="4" y="12">89-103</text><text fill="#000" font-size="20"
             font-family="Roboto Slab" x="50%" y="30" text-anchor="middle" alignment-baseline="central">Act</text></svg>
-        <svg id="Lan" class="lanthanide" x="80" y="200" width="40" height="40" onclick="returnMsg(id)"><rect
+        <svg id="Lan" class="lanthanide" x="80" y="200" width="40" height="40" onclick="returnMsg(this.id)"><rect
             width="40" height="40" fill="maroon" stroke='black' stroke-width='0.3'></rect><text fill="#000" font-size="10"
             font-family="Roboto Slab" x="4" y="12">57-71</text><text fill="#000" font-size="20"
             font-family="Roboto Slab" x="50%" y="30" text-anchor="middle" alignment-baseline="central">Lan</text></svg>
@@ -90,19 +90,19 @@
       var Lat = document.getElementById("Lanthanide");
       for (i of atoms.elements){
 				if (i.category == "lanthanide"){
-        	 var append = "<svg class='lanthanide' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='0' width='40' height='40' onclick='returnMsg(id)'><rect stroke='black' stroke-width='0.3' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
+        	 var append = "<svg class='lanthanide' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='0' width='40' height='40' onclick='returnMsg(this.id)'><rect stroke='black' stroke-width='0.3' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
         	 $("#Lanthanide").append(append);
            
         }else if (i.category=="actinide"){
-        	 var append = "<svg class='actinide' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='0' width='40' height='40' onclick='returnMsg(id)'><rect stroke='blue' stroke-width='1' stroke-dasharray='6.444444,6.444444' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
+        	 var append = "<svg class='actinide' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='0' width='40' height='40' onclick='returnMsg(this.id)'><rect stroke='blue' stroke-width='1' stroke-dasharray='6.444444,6.444444' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
         	 $("#Actinide").append(append);
           
           
         }else{
           if (!i.radioactive){
-            var append = "<svg class='"+i.category+"' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='"+((i.ypos-1)*40)+"' width='40' height='40' onclick='returnMsg(id)'><rect stroke='black' stroke-width='0.3' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
+            var append = "<svg class='"+i.category+"' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='"+((i.ypos-1)*40)+"' width='40' height='40' onclick='returnMsg(this.id)'><rect stroke='black' stroke-width='0.3' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
           }else{
-            var append = "<svg class='"+i.category+"' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='"+((i.ypos-1)*40)+"' width='40' height='40' onclick='returnMsg(id)'><rect stroke='blue' stroke-width='1' stroke-dasharray='6.444444,6.444444' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
+            var append = "<svg class='"+i.category+"' id='"+i.number+"'x='"+((i.xpos-1)*40)+"'y='"+((i.ypos-1)*40)+"' width='40' height='40' onclick='returnMsg(this.id)'><rect stroke='blue' stroke-width='1' stroke-dasharray='6.444444,6.444444' width='40' height='40' fill='"+fills[i.category]+"'></rect><text fill='#000' font-size='10' font-family='Roboto Slab' x='4' y='12'>"+i.number+"</text><text fill='"+fills[i.phase]+"' font-size='20' font-family='Roboto Slab' x='50%' y='30' text-anchor='middle' alignment-baseline='central'>"+i.symbol+"</text></svg>"; 
           }
       		$("#PSE").append(append);
           console.log(append);
@@ -160,6 +160,7 @@
         
       }
        function returnMsg (name){
+        console.log(name)
         if (name == "Act"){
         	$("#Actinide")[0].style = "display: block";
           panZoom.reset()
@@ -202,11 +203,6 @@
           
         }
     	}
-      
-
-    
- 	 
-      
       
   </script>
   </body>
