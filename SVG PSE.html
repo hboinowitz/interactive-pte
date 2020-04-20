@@ -102,7 +102,6 @@
     var atoms;
     var panZoom;
     $.getJSON("PeriodicTableJSON.json", function(data) {
-        console.log("Found it");
         atoms = data;
         initialize();
     })
@@ -155,7 +154,6 @@
                     </svg>"; 
                 }
                 $("#PSE").append(append);
-                console.log(append);
             }
             if (i.symbol == "Uue") {
                 panZoom = svgPanZoom('#PSE',{fit:true, center:false});
