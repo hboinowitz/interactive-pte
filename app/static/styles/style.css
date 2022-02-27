@@ -1,0 +1,61 @@
+body {
+    font-family: "Roboto Slab";
+}
+
+#pse_wrapper {
+    max-width: 70%;
+    height: 800px;
+    display: grid; 
+}
+
+.Gas {
+    color: red;
+} 
+
+.Solid{
+    color: black;
+}
+
+.Liquid {
+    color: yellow;
+}
+
+.metalloid {
+    background-color: rgba(144, 238, 144, 0.6);
+    border: 2px solid rgb(144, 238, 144);
+}
+
+.nonmetal {
+    background-color: rgba(240, 128, 128, 0.6);
+    border: 2px solid rgb(240, 128, 128);
+} 
+
+.metal {
+    background-color: rgba(186, 85, 211, 0.6);
+    border: 2px solid rgb(186, 85, 211);
+}
+
+.transition-metal {
+    background-color: rgba(173, 216, 230, 0.6);
+    border: 2px solid rgb(173, 216, 230);
+}
+
+.gas {
+    background-color: rgba(240, 128, 128, 0.6);
+    border: 2px solid rgb(240, 128, 128);
+}
+
+.actinide {
+    background-color: rgba(128, 128, 0, 0.6);
+    border: 2px solid olive;
+} 
+
+.lanthanide {
+    background-color: rgba(128, 0, 0, 0.6);
+    border: 2px solid maroon;
+}
+
+.element {
+    height: 60px;
+    width: 60px;
+}
