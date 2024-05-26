@@ -5,10 +5,11 @@ import json
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
+def periodic_table():
     with open('static/data/periodic_table.json') as file:
         data_set = json.load(file)
     return render_template("overview.html.j2", name = 'Hydrogen', 
                             elements = data_set['elements'])
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

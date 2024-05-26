@@ -21,8 +21,18 @@
         {% for element in elements %}
             <div class = "element {{element['category']}}", 
             style = "grid-row: {{ element['ypos'] }}; grid-column: {{ element['xpos'] }}"> 
-                <div class="{{element['phase']}}", style="text-align:left, ">
-                    {{ element['symbol'] }}
+                <div class="description {{element['phase']}}">
+                    <div style = "display: grid">
+                        <div style = "grid-row: 1; grid-column: 1">
+                            {{ element['symbol'] }}
+                        </div>
+                        <div style = "grid-row: 1; grid-column: 2; text-align: right;">
+                            {{ element['number'] }}
+                        </div>
+                    </div> 
+                    <div class="element_name_wrapper">
+                        <p class="element_name">{{ element['name'] }}</p>
+                    </div> 
                 </div>
             </div>
         {% endfor %}
