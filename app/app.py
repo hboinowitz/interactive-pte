@@ -8,8 +8,7 @@ app = Flask(__name__)
 def periodic_table():
     with open('static/data/periodic_table.json') as file:
         data_set = json.load(file)
-    return render_template("overview.html.j2", name = 'Hydrogen', 
-                            elements = data_set['elements'])
+    return render_template("overview.html.j2", elements = data_set['elements'])
 
 if __name__ == "__main__":
     app.run(debug=True)
